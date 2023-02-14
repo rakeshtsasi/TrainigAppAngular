@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TestDirective } from './directive/test.directive';
 import { HighlightDirective } from './directive/highlight.directive';
-import { HomeComponent } from './pages/home/home.component';
+import { HomeComponent } from './screens/home/home.component';
 import { AboutComponent } from './pages/about/about.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -19,8 +19,11 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDividerModule} from '@angular/material/divider';
 import { ReactiveFormsModule } from '@angular/forms';
-import {MatInputModule} from '@angular/material/input'
-
+import {MatInputModule} from '@angular/material/input';
+import {MatSelectModule} from '@angular/material/select';
+import {MatRadioModule} from '@angular/material/radio';
+import {MatSliderModule} from '@angular/material/slider';
+import {MatTableModule} from '@angular/material/table';
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,7 +47,11 @@ import {MatInputModule} from '@angular/material/input'
     MatButtonModule,
     MatIconModule,
     MatDividerModule,
-    MatInputModule
+    MatInputModule,
+    MatSelectModule,
+    MatRadioModule,
+    MatSliderModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

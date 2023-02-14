@@ -1,5 +1,11 @@
+
 import { Component } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, Validator, Validators } from '@angular/forms';
+
+interface Food {
+  value: string;
+  viewValue: string;
+}
 
 @Component({
   selector: 'app-login',
@@ -17,9 +23,17 @@ export class LoginComponent {
       addressline2:new FormControl(''),
       city:new FormControl('',[Validators.required]),
       postalcode:new FormControl(''),
-     })
+     }),
+     food:new FormControl('',[Validators.required]),
+     option:new FormControl('pizza-1'),
+     slider:new FormControl(25)
   },{validators:[this.passwordMatchValidator]});
 
+  foods: Food[] = [
+    {value: 'steak-0',viewValue:'Steak' },
+    {value: 'pizza-1', viewValue: 'Pizza'},
+    {value: 'tacos-2', viewValue: 'Tacos'},
+  ];
 
   get userNameCtrl(): FormControl{
     //return this.formLogin.get('userName') as FormControl;
@@ -31,8 +45,10 @@ export class LoginComponent {
     return <FormControl>this.formLogin.get('password');
   }
   get confirmPasswordCtrl(): FormControl{
-    //return this.formLogin.get('userName') as FormControl;
     return <FormControl>this.formLogin.get('confirmpassword');
+  }
+  get foodCtrl(): FormControl{
+    return <FormControl>this.formLogin.get('food');
   }
   
    passwordMatchValidator(fg:AbstractControl<FormGroup>){
@@ -43,6 +59,7 @@ export class LoginComponent {
    frmSubmit(){
    // console.log(this.formLogin.value)
    console.log(this.formLogin);
+   
    // alert();
    }
 }
