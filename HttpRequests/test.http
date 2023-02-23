@@ -1,0 +1,25 @@
+GET https://639d95413542a261304ae6e2.mockapi.io/api/users
+
+###
+POST https://639d95413542a261304ae6e2.mockapi.io/api/users
+Content-Type: application/json
+
+{
+    "name":"Test Name 5555",
+    "qualifications":["Test Qual 1","Qual 2"]
+}
+
+###
+PUT https://639d95413542a261304ae6e2.mockapi.io/api/users/5
+Content-Type: application/json
+
+{
+    "name":"Test Name new 5555-7888",
+    "qualifications":["Qual 3 new","Qual 4 new","Qual 5"]
+}
+
+###
+GET https://639d95413542a261304ae6e2.mockapi.io/api/users/5
+
+###
+DELETE https://639d95413542a261304ae6e2.mockapi.io/api/users/5

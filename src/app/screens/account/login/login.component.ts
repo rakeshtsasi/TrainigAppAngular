@@ -1,4 +1,5 @@
 
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, Validator, Validators } from '@angular/forms';
 
@@ -28,6 +29,44 @@ export class LoginComponent {
      option:new FormControl('pizza-1'),
      slider:new FormControl(25)
   },{validators:[this.passwordMatchValidator]});
+
+
+  constructor(private http:HttpClient){
+  //  http.get("https://639d95413542a261304ae6e2.mockapi.io/api/users")
+  //  .subscribe((res)=>{
+  //    console.log(res);
+  //  });
+
+  //  http.post("https://639d95413542a261304ae6e2.mockapi.io/api/users",{
+  //   "name":"Inserted name from angular",
+  //   "qualifications":["Qual from angular", "Qual from angular 2"]
+  //  })
+  //  .subscribe((res)=>{
+  //    console.log(res);
+  //  });
+
+  // http.get("https://639d95413542a261304ae6e2.mockapi.io/api/users/6")
+  // .subscribe((res)=>{
+  //   console.log(res);
+  // });
+
+  // http.put("https://639d95413542a261304ae6e2.mockapi.io/api/users/6",{
+  //   "name":"Updated from angular",
+  //    "qualifications":["Updated Qual from angular"]
+  // })
+  // .subscribe((res)=>{
+  //   console.log(res);
+  // });
+ 
+  }
+
+  deleteRecord(){
+    this.http.delete("https://639d95413542a261304ae6e2.mockapi.io/api/users/2").
+    subscribe((res)=>{
+      console.log(res);
+      alert("Deleted");
+    });
+  }
 
   foods: Food[] = [
     {value: 'steak-0',viewValue:'Steak' },
